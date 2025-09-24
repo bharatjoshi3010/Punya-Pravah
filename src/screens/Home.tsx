@@ -4,7 +4,13 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import Navbar from '../components/Navbar'
 import Temple from '../components/Temple'
 
-export default function Home() {
+//navigational imports
+import { RootStackParamList } from '../App'
+import { NativeStackScreenProps } from '@react-navigation/native-stack'
+
+type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>
+
+export default function Home({navigation}: HomeProps) {
   return (
     <SafeAreaView>
       <View>

@@ -2,7 +2,13 @@ import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-export default function SignIn() {
+//navigation imports
+import { NativeStackScreenProps } from '@react-navigation/native-stack'
+import { RootStackParamList } from '../App'
+
+type loginProps = NativeStackScreenProps<RootStackParamList, 'Home'>
+
+export default function LogIn() {
 
     const [emial, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -109,6 +115,8 @@ const styles = StyleSheet.create({
     flexDirection : 'row',
     justifyContent :"space-evenly",
     alignItems :'center'
-   }
+   },
+   btnView:{
 
+   }
 })
