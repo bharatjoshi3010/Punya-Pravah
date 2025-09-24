@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 //navigation imports
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
-import { RootStackParamList } from '../App'
+import { RootStackParamList } from '../components/RootNavigator'
 
 type loginProps = NativeStackScreenProps<RootStackParamList, 'LogIn'>
 

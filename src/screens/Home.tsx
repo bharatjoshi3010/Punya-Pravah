@@ -5,12 +5,17 @@ import Navbar from '../components/Navbar'
 import Temple from '../components/Temple'
 
 //navigational imports
-import { RootStackParamList } from '../App'
-import { NativeStackScreenProps } from '@react-navigation/native-stack'
+import { RootStackParamList } from '../components/RootNavigator'
+import { NativeStackNavigationProp, NativeStackScreenProps } from '@react-navigation/native-stack'
+import { useNavigation } from '@react-navigation/native'
 
 type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>
 
-export default function Home({navigation}: HomeProps) {
+export default function Home({route}: HomeProps) {
+
+  // const {sessionId, userName} = route.params
+
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
   return (
     <SafeAreaView>
       <View>
