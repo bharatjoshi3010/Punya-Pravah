@@ -11,7 +11,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native'      
 
 export type RootStackParamList ={
-  SignIn : undefined,
+  LogIn : undefined,
   Home : {sessionId: string, userName : string},
   deatils : {detailObg: object}
 };
@@ -21,14 +21,13 @@ const Stack = createNativeStackNavigator<RootStackParamList>()
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
+      <Stack.Navigator initialRouteName='Home' screenOptions={{ headerShown: false }}>
         <Stack.Screen
-          name='Home'
+          name = 'Home'
           component={Home}
-          options={{ headerShown: false }} 
         />
         <Stack.Screen
-          name='SignIn'
+          name = 'LogIn'
           component={LogIn}
         />
 

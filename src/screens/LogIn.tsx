@@ -6,9 +6,9 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../App'
 
-type loginProps = NativeStackScreenProps<RootStackParamList, 'Home'>
+type loginProps = NativeStackScreenProps<RootStackParamList, 'LogIn'>
 
-export default function LogIn() {
+export default function LogIn({route}: loginProps) {
 
     const [emial, setEmail] = useState("")
     const [password, setPassword] = useState("")
