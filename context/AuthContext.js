@@ -83,8 +83,10 @@ const AuthProvider =({children}) => {
     return (
         <AuthContext.Provider value={contextData}>
             {loading ? (
-                <SafeAreaView>
-                    <Text>loading ...</Text>
+                <SafeAreaView style={{flex:1,justifyContent:"center",
+                    alignItems :'center'
+                }}>
+                    <Text style={{color : 'black', fontSize: 24, fontWeight:'800'}}>loading ...</Text>
                 </SafeAreaView>
             ) : (
                 children
