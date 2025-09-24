@@ -63,13 +63,13 @@ export default function LogIn({ route }: loginProps) {
                     <View style={styles.btnFiled}>
 
                         <View style={styles.btnView}>
-                            <View style={styles.loginBtn}>
-                                <Pressable onPress={handleSubmit}>
+                            <Pressable onPress={handleSubmit} style={styles.loginBtn}>
+                                
                                     <View>
                                         <Text style={styles.logTxt}>Login</Text>
                                     </View>
-                                </Pressable>
-                            </View>
+                                
+                            </Pressable>
                         </View>
                         <View style={styles.registerTxt}>
 
