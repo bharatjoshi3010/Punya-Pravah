@@ -3,24 +3,30 @@ import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 //navigation imports
-import { NativeStackScreenProps } from '@react-navigation/native-stack'
+import { NativeStackNavigationProp, NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../components/RootNavigator'
+import { useNavigation } from '@react-navigation/native'
 
 //for login 
 import { useAuth } from '../../context/AuthContext';
 
+
 type loginProps = NativeStackScreenProps<RootStackParamList, 'LogIn'>
 
+
 export default function LogIn({ route }: loginProps) {
+    
 
     const { session, signin } = useAuth()
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
+
     const handleSubmit = async () => {
-        console.log("youfind me")
-        console.log(signin)
+        // console.log("youfind me")
+        // console.log(signin)
         signin({ email, password })
     };
 
@@ -80,7 +86,9 @@ export default function LogIn({ route }: loginProps) {
                                     fontWeight: '600'
                                 }
                             }>Dont't have a account,  </Text>
-                            <TouchableOpacity><Text style={{
+                            <TouchableOpacity
+                            onPress={()=>{navigation.push('SignUp')}}
+                            ><Text style={{
                                 color: 'blue',
                                  fontSize : 16,
                                 fontWeight: '600'
@@ -123,14 +131,14 @@ const styles = StyleSheet.create({
     },
     headingTxt: {
         color: 'black',
-        fontSize: 50,
+        fontSize: 40,
         fontWeight: 'bold',
     },
     inputs: {
         // flex : 1
     },
     inputFieldHeadingTxt: {
-        fontSize: 26,
+        fontSize: 22,
         color: "black",
         fontWeight: '800',
     },

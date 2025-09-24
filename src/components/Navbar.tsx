@@ -1,7 +1,24 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { RootStackParamList } from '../components/RootNavigator'
+import { NativeStackNavigationProp, NativeStackScreenProps } from '@react-navigation/native-stack'
+import { useNavigation } from '@react-navigation/native'
+import { useAuth } from '../../context/AuthContext';
 
-export default function Navbar() {
+const formatFirstName = (fullName: string) =>                   //this function helps to make the name look better
+  fullName.trim().split(' ')[0].charAt(0).toUpperCase() + fullName.trim().split(' ')[0].slice(1).toLowerCase();  
+
+export default function Navbar(name: any) {
+    const myName = formatFirstName(name.name)
+
+    const {signout} = useAuth()
+    
+        const handleSubmit = async () => {
+            console.log("youfind me")
+            signout();
+    
+            
+        };
   return (
     <View style={styles.nav}>
       <View style={styles.container}>
@@ -15,15 +32,24 @@ export default function Navbar() {
             style={styles.ImageLogo}
         />
         <View style={styles.userName}>
-            <Text style={styles.userNameTxt}>Hello Alice</Text>
+            <Text style={styles.userNameTxt}>Hello {myName}</Text>
         </View>
         </View>
+        <View style={styles.icons}>
+            <Pressable onPress={handleSubmit}>
+        <Image
+            source={
+                require('../assets/LogOut.png')
+            }
+            style={styles.log}
+        /></Pressable>
         <Image
             source={
                 require('../assets/Dots.png')
             }
             style={styles.threeDot}
         />
+        </View>
       </View>
     </View>
   )
@@ -49,6 +75,14 @@ const styles = StyleSheet.create({
     userDetails:{
         flexDirection: 'row',
         alignItems : 'center'
+    },
+    icons:{
+        flexDirection:'row'
+    },
+    log:{
+        marginRight:15,
+        height: 25,
+        width:25,
     },
     threeDot:{
         height: 25,

@@ -64,6 +64,7 @@ export default function Temple() {
 const styles = StyleSheet.create({
   pagebg:{
     backgroundColor : '#FAA533',
+    // flex:1
   },
   flatList:{
     // marginBottom: 800
