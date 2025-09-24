@@ -6,12 +6,24 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../components/RootNavigator'
 
+//for login 
+import { useAuth } from '../../context/AuthContext';
+
 type loginProps = NativeStackScreenProps<RootStackParamList, 'LogIn'>
 
 export default function LogIn({route}: loginProps) {
 
-    const [emial, setEmail] = useState("")
+    const {session, signin} = useAuth()
+
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
+    const handleSubmit = async () => {
+        console.log("youfind me")
+        console.log(signin)
+        signin({email, password})
+    };
+
 
   return (
     <SafeAreaView style={{flex:1}}>
@@ -27,7 +39,7 @@ export default function LogIn({route}: loginProps) {
         <View>
             <TextInput 
             style={styles.inputBox}
-            value={emial}
+            value={email}
             onChangeText={(text)=>{
                 setEmail(text);
             }}
@@ -60,7 +72,7 @@ export default function LogIn({route}: loginProps) {
             <Button
         title="Login"
         color="blue"
-        onPress={() => Alert.alert('Login Done !')}
+        onPress={handleSubmit}
       />
       </View>
       
