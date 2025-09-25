@@ -13,15 +13,11 @@ import { useAuth } from '../../context/AuthContext';
 type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>
 
 export default function Home({route}: HomeProps) {
-
   // const {sessionId, userName} = route.params
   const {signout, user, session} = useAuth()
-
     const handleSubmit = async () => {
         console.log("youfind me")
-        signout();
-
-        
+        signout();        
     };
 
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()

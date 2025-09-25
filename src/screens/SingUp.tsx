@@ -60,8 +60,9 @@ export default function SingUp({ route }: SignupProps) {
         onChangeText={(t) => {setName(t), setAllok(true)}}
         placeholder="your name here"
         autoCapitalize="none"
-        style={styles.input}
+        style={[styles.input, {color:'black'}]}
         returnKeyType="next"
+        placeholderTextColor="#adacacff"
       />
 <Text style={styles.label}>Email</Text>
       <TextInput
@@ -69,8 +70,9 @@ export default function SingUp({ route }: SignupProps) {
         onChangeText={(t) => {setEmail(t), setAllok(true)}}
         placeholder="you@example.com"
         keyboardType="email-address"
-        style={styles.input}
+        style={[styles.input, {color:'black'}]}
         returnKeyType="next"
+        placeholderTextColor="#adacacff"
       />
 
 
@@ -80,8 +82,9 @@ export default function SingUp({ route }: SignupProps) {
         onChangeText={(t) => {setPhone(t.replace(/[^0-9]/g, '')), setAllok(true)}}
         placeholder="1234567890"
         keyboardType="phone-pad"
-        style={styles.input}
+        style={[styles.input, {color:'black'}]}
         returnKeyType="next"
+        placeholderTextColor="#adacacff"
       />
 
 
@@ -92,8 +95,9 @@ export default function SingUp({ route }: SignupProps) {
           onChangeText={(text) => {setPassword(text), setAllok(true)}}
           placeholder="At least 8 characters"
           secureTextEntry={!showPassword}
-          style={[styles.input, styles.flexInput]}
+          style={[styles.input, styles.flexInput, {color:'black'}]}
           returnKeyType="next"
+          placeholderTextColor="#adacacff"
         />
         <TouchableOpacity
           onPress={() => {setShowPassword((s) => !s), setAllok(true)}}
@@ -111,8 +115,9 @@ export default function SingUp({ route }: SignupProps) {
         onChangeText={(s)=>{setConfirm(s), setAllok(true)}}
         placeholder="Re-type password"
         secureTextEntry={!showPassword}
-        style={styles.input}
+        style={[styles.input, {color:'black'}]}
         returnKeyType="done"
+        placeholderTextColor="#adacacff"
       />
 
 
@@ -234,7 +239,7 @@ const styles = StyleSheet.create({
     marginTop: 18,
     backgroundColor: '#0051ffff',
     paddingVertical: 12,
-    borderRadius: 12,
+    borderRadius: 50,
     alignItems: 'center',
   },
   buttonDisabled: { 

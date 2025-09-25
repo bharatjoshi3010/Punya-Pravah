@@ -17,17 +17,20 @@ type loginProps = NativeStackScreenProps<RootStackParamList, 'LogIn'>
 export default function LogIn({ route }: loginProps) {
     
 
-    const { session, signin } = useAuth()
-
+    const { session, signin, error } = useAuth()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    let isErrorS = error ? true : false
+    const [isError, setIsError] = useState(isErrorS)
 
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
-
+    console.log("i am the error og ---> ", error)
     const handleSubmit = async () => {
         // console.log("youfind me")
         // console.log(signin)
+        console.log("i am the error",error)
         signin({ email, password })
+        
     };
 
 
@@ -44,12 +47,15 @@ export default function LogIn({ route }: loginProps) {
                         </View>
                         <View>
                             <TextInput
-                                style={[styles.inputBox]}
+                                // style={[styles.inputBox, {color:'black'}]}
+                                style={[styles.input, {color:'black'}]}
                                 value={email}
                                 onChangeText={(text) => {
                                     setEmail(text);
+                                    setIsError(false);
                                 }}
-                                placeholder='Enter your mail' />
+                                placeholder='Enter your mail'
+                                placeholderTextColor="#adacacff" />
                         </View>
                         <View>
                             <Text style={ [styles.inputFieldHeadingTxt, styles.passHead]}>Password</Text>
@@ -57,15 +63,18 @@ export default function LogIn({ route }: loginProps) {
                         <View>
                             <TextInput
                                 value={password}
-                                style={styles.inputBox}
+                                style={[styles.input, {color:'black'}]}
                                 onChangeText={(text) => {
                                     setPassword(text);
+                                    setIsError(false);
                                 }}
                                 placeholder='Password'
+                                placeholderTextColor="#adacacff"
                                 secureTextEntry
                             />
                         </View>
                     </View>
+                    {(!isError) ? <View></View> : <View><Text style={{color: 'red'}}>Please enter valid credentials</Text></View>}
                     <View style={styles.btnFiled}>
 
                         <View style={styles.btnView}>
@@ -85,7 +94,7 @@ export default function LogIn({ route }: loginProps) {
                                     color:'#6a6767ff',
                                     fontWeight: '600'
                                 }
-                            }>Dont't have a account,  </Text>
+                            }>Don't have a account,  </Text>
                             <TouchableOpacity
                             onPress={()=>{navigation.push('SignUp')}}
                             ><Text style={{
@@ -138,7 +147,7 @@ const styles = StyleSheet.create({
         // flex : 1
     },
     inputFieldHeadingTxt: {
-        fontSize: 22,
+        fontSize: 20,
         color: "black",
         fontWeight: '800',
     },
@@ -150,6 +159,17 @@ const styles = StyleSheet.create({
         fontSize: 25,
         borderBottomColor: 'black'
     },
+    input: {
+        // borderBottomColor: 'black',
+    borderWidth: 2,
+    borderColor: '#e6e9ef',
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    borderRadius: 10,
+    fontSize: 15,
+    backgroundColor: '#fff',
+    marginTop:6
+  },
     emailHead:{
         marginTop:5
     },
@@ -174,10 +194,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 15,
         backgroundColor: 'blue',
-        paddingVertical: 15,
+        paddingVertical: 10,
         // paddingHorizontal : 50,
         // borderWidth : 2,
-        borderRadius: 10
+        borderRadius: 50
     },
     logTxt: {
         color: 'white',

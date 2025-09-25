@@ -9,7 +9,7 @@ const AuthProvider = ({ children }) => {
     const [loading, setloading] = useState(true);
     const [session, setSession] = useState(false); // if it is true then we go to home page other wise we will go to the signin page
     const [user, setUser] = useState(false);
-
+    const [error, setError] = useState('');
     useEffect(() => {
         init();
     }, []);
@@ -37,9 +37,11 @@ const AuthProvider = ({ children }) => {
             const responseSession = await account.createEmailPasswordSession(email, password);
             setSession(responseSession)
             const responseUser = await account.get()
-            setUser(responseUser)
+            setUser(responseUser),
+            setError('')
         } catch (error) {
             console.log(error)
+            setError(error)
         }
         setloading(false);
     };
@@ -50,6 +52,7 @@ const AuthProvider = ({ children }) => {
         setSession(null)
         setUser(null)
         setloading(false)
+        setError('')
     };
 
 
@@ -82,7 +85,7 @@ const AuthProvider = ({ children }) => {
     }
 
 
-    const contextData = { session, user, signin, signout, signup };
+    const contextData = { session, user, signin, signout, signup, error};
     return (
         <AuthContext.Provider value={contextData}>
             {loading ? (
