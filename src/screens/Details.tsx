@@ -1,5 +1,5 @@
-import { Dimensions, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import { Dimensions, FlatList, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, { useState } from 'react'
 
 //Navigational imports
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
@@ -14,12 +14,31 @@ type DetailProps = NativeStackScreenProps<RootStackParamList, 'Deatils'>
 export default function Details({ route }: DetailProps) {
 
     const { detailObj } = route.params
-    const { id, name, location, famousFor, imageURL } = detailObj
+    const { id, name, location, famousFor, imageURL, extraPhotos} = detailObj
+    const [images] = useState(extraPhotos);
+    console.log(extraPhotos)
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <Navbar name={name} />
             <ScrollView style={{ flex: 1 }}>
-                <Text></Text>
+                 <FlatList
+        data={images}
+        keyExtractor={(item, index) => index.toString()}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        // style={styles.thumbnailContainer}
+        renderItem={({ item, index }) => (
+          <TouchableOpacity >
+            <Image
+              source={{ uri: item }}
+              style={[
+                styles.img,
+                
+              ]}
+            />
+          </TouchableOpacity>
+        )}
+      />
             </ScrollView>
             <View>
                 <View style={styles.buttonField}>
@@ -40,6 +59,10 @@ export default function Details({ route }: DetailProps) {
 }
 
 const styles = StyleSheet.create({
+    img:{
+        height:300,
+        width : screenWidth
+    },
     buttonField:{
         flexDirection : "row",
         justifyContent :'space-between',
