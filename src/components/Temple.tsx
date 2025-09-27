@@ -1,9 +1,21 @@
-import { Dimensions, FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Dimensions, FlatList, Image, StyleSheet, Text, ToastAndroid, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { data } from '../assets/templeList'
 
+//navigational imports
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { RootStackParamList } from './RootNavigator'
+import { useNavigation } from '@react-navigation/native'
+
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window')
 export default function Temple() {
+
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
+
+  const handlePlan = (item : object) => {
+    navigation.push('Deatils', { detailObj: item });
+  }
+
   return (
     <View style={styles.pagebg}>
     <FlatList
@@ -40,13 +52,15 @@ export default function Temple() {
             </View>
             <View style={styles.btns}>
               
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => {
+                ToastAndroid.show(`${item.name} added to your dream place`, ToastAndroid.SHORT);
+              }}>
                 <View style={[styles.dpbtn, styles.btn]}>
                 <Text style={styles.btnText}>Add to Dreamplace</Text>
                 </View>
               </TouchableOpacity>
               
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => handlePlan(item)}>
                 <View style={[styles.pdbtn, styles.btn]}>
                 <Text style={styles.btnText}>Plan Darshan</Text>
                 </View>
@@ -130,6 +144,15 @@ const styles = StyleSheet.create({
     color : 'white',
     fontSize : 16,
     fontWeight : 'bold',
+
+  },
+  name:{
+
+  },
+  loc:{
+
+  },
+  ff:{
 
   }
 })

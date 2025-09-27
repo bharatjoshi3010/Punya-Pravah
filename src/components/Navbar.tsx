@@ -15,10 +15,9 @@ export default function Navbar(name: any) {
     
         const handleSubmit = async () => {
             console.log("youfind me")
-            signout();
-    
-            
+            signout();            
         };
+        
   return (
     <View style={styles.nav}>
       <View style={styles.container}>

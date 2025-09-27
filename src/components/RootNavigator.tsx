@@ -11,20 +11,21 @@ import { useAuth } from '../../context/AuthContext';
 import Home from '../screens/Home';
 import LogIn from '../screens/LogIn';
 import SingUp from '../screens/SingUp';
+import Details from '../screens/Details';
 
 
 export type RootStackParamList ={
   LogIn : undefined,
   SignUp : undefined,
   Home : {sessionId: string, userName : string},
-  deatils : {detailObg: object},
+  Deatils : {detailObj: object},
   
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
 
 export default function RootNavigator() {
-    console.log("hello",useAuth())
+    // console.log("hello",useAuth())  //for debugging
     const {session} = useAuth()
     const initial = (!session)?'LogIn' : 'Home'
   return (
@@ -41,6 +42,10 @@ export default function RootNavigator() {
         <Stack.Screen
           name = 'SignUp'
           component={SingUp}
+        />
+        <Stack.Screen
+          name = 'Deatils'
+          component= {Details}
         />
       </Stack.Navigator>
     </NavigationContainer>
