@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React, { JSX, useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Navbar from '../components/Navbar'
@@ -47,6 +47,7 @@ const [tokenData, setTokenData] = useState([]);
      return (
         <SafeAreaView>
             <Navbar headerText='Booked Tokens'/>
+            <ScrollView>
     <View style={styles.container}>
       {tokenData.map((token) => {
         // Find matching temple details
@@ -69,6 +70,7 @@ const [tokenData, setTokenData] = useState([]);
         );
       })}
     </View>
+    </ScrollView>
     </SafeAreaView>
   );
 };
