@@ -12,43 +12,55 @@ import { useAuth } from '../../context/AuthContext';
 
 type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>
 
-export default function Home({route}: HomeProps) {
+export default function Home({ route }: HomeProps) {
   // const {sessionId, userName} = route.params
-  const {signout, user, session} = useAuth()
-    const handleSubmit = async () => {
-        console.log("youfind me")
-        signout();        
-    };
+  const { signout, user, session } = useAuth()
+  const handleSubmit = async () => {
+    console.log("youfind me")
+    signout();
+  };
 
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
 
-  if (!session) { navigation.replace('LogIn') 
-    return 
-  } 
+  if (!session) {
+    navigation.replace('LogIn')
+    return
+  }
+
+  function formatName(fullName: string): string {
+    if (!fullName) return '';
+
+    // Trim spaces and split by space
+    const firstName = fullName.trim().split(' ')[0];
+
+    // Capitalize first letter and make rest lowercase
+    return firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase();
+  }
+
 
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{ flex: 1 }}>
       <View>
-        <Navbar name={user.name}/>
+        <Navbar headerText={`Hello ${formatName(user.name)}`} />
       </View>
       <View>
-        <Temple/>
+        <Temple />
       </View>
       <View >
         <TouchableOpacity onPress={handleSubmit} style={styles.button}>
-        <Text style={{color:'black', fontSize: 24}}> Click on this red are  to logout</Text>
+          <Text style={{ color: 'black', fontSize: 24 }}> Click on this red are  to logout</Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>  
+    </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
-  button:{
-    height:200,
+  button: {
+    height: 200,
     backgroundColor: 'red',
-    justifyContent:'center',
-    alignItems:'center'
+    justifyContent: 'center',
+    alignItems: 'center'
     // marginTop:600
   }
 })

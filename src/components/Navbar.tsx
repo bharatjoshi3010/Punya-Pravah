@@ -5,11 +5,7 @@ import { NativeStackNavigationProp, NativeStackScreenProps } from '@react-naviga
 import { useNavigation } from '@react-navigation/native'
 import { useAuth } from '../../context/AuthContext';
 
-const formatFirstName = (fullName: string) =>                   //this function helps to make the name look better
-  fullName.trim().split(' ')[0].charAt(0).toUpperCase() + fullName.trim().split(' ')[0].slice(1).toLowerCase();  
-
-export default function Navbar(name: any) {
-    const myName = formatFirstName(name.name)
+export default function Navbar({headerText} :  { headerText: string }) {
 
     const {signout} = useAuth()
     
@@ -31,7 +27,7 @@ export default function Navbar(name: any) {
             style={styles.ImageLogo}
         />
         <View style={styles.userName}>
-            <Text style={styles.userNameTxt}>Hello {myName}</Text>
+            <Text style={styles.userNameTxt}>{headerText}</Text>
         </View>
         </View>
         <View style={styles.icons}>

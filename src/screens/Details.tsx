@@ -20,7 +20,7 @@ export default function Details({ route }: DetailProps) {
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <Navbar name={name} />
+            <Navbar headerText={'Punya Pravah'} />
             <ScrollView style={{ flex: 1 }}>
                 <FlatList
                     style={styles.imgScroll}

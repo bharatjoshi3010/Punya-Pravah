@@ -25,8 +25,6 @@ export default function Temple() {
           contentContainerStyle={{ paddingBottom: 200 }}
           keyExtractor = {item => item.id.toString()}
           renderItem={({item}) => {
-            console.log(item.imageURL)
-            console.log(screenWidth)
             return (
             <View style={styles.card}>
               <View style={styles.imageView}>
