@@ -10,7 +10,7 @@ export const data = [
     extraPhotos: [
       'https://i.pinimg.com/736x/e2/0a/32/e20a328f210fa2ac499c2831f51739ea.jpg',
       'https://i.pinimg.com/736x/d9/42/35/d9423545cab3cdefdaff0916c166c1dc.jpg',
-      'https://i.pinimg.com/736x/24/87/84/248784ec52815f68b6e5af023dfa9e54.jpg',
+      'https://imgs.search.brave.com/U7yb96NDbT7A0RAvNEGGUzmk8ijOdqAKx1MEoh_PfW8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kMzY4/dWZ1N3hnY3M4Ni5j/bG91ZGZyb250Lm5l/dC8yMTM3MDMzOTQ3/My5qcGc',
       'https://www.alightindia.com/cdn/uploads/postimages/ORIGINAL/Somnath%20Jyotirlinga%20%20Internet--870ebe.jpg'
     ]
   },
@@ -27,7 +27,7 @@ export const data = [
       'https://i.pinimg.com/736x/83/2e/24/832e24502fb934997b497e04439fce8e.jpg',
       'https://famoustemplesofindia.com/wp-content/uploads/2023/10/Ambaji-Temple-1-1024x768.jpg',
       'https://i.pinimg.com/736x/17/51/f9/1751f9cf005094b9ab28fba082dbf1c9.jpg',
-      'https://templemitra.com/files/assets/images/product/95873templemitra.jpg'
+      'https://imgs.search.brave.com/SBecRGz9Itaq5NSP-maTAOzipZuJi-YXYM2vm447hZg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Z3VqYXJhdHRvdXJp/c20uY29tL2NvbnRl/bnQvZGFtL2d1anJh/dHRvdXJpc20vaW1h/Z2VzL2hvbWVfcGFn/ZS9tYXJjaC9hbWJh/amktdGVtcGxlL0Ft/YmFqaV9uaWdodF8z/LmpwZWc'
     ]
   },
   {
@@ -39,10 +39,10 @@ export const data = [
     details: `The Dwarkadhish (Jagat Mandir) temple is dedicated to Lord Krishna in his “King of Dwarka” form. It stands on the banks of the Gomti River, by the Arabian Sea, and has a stunning seven-story structure with intricate carvings, tall spires, and ornate interiors. It is believed that Krishna ruled from here, making the place deeply sacred. Key festivals include Janmashtami, Holi, and Diwali, when the temple sees large pilgrim influx.`,
     timings: `The busiest times are early morning darshan (5 am–8 am) and evening (5 pm–8 pm). On major Krishna festivals, crowds swell heavily, so arriving before dawn or using special queue passes is advisable. `,
     extraPhotos: [
-      'https://i.pinimg.com/736x/e6/f3/a3/e6f3a3de9e134319002f1e395cf59c54.jpg',
-      'https://thumbs.dreamstime.com/z/dwarka-gujarat-india-december-ghats-dwarka-dwarkadhish-temple-bank-river-gomti-ghats-dwarka-124481466.jpg?ct=jpeg',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Dwarkadhish_Temple_-_Jagat_Mandir_-_Dwarakadheesh_and_surroundings_during_Dwaraka_DWARASPDB_2015_%28105%29.jpg/1200px-Dwarkadhish_Temple_-_Jagat_Mandir_-_Dwarakadheesh_and_surroundings_during_Dwaraka_DWARASPDB_2015_%28105%29.jpg?20210221033429',
-      "https://www.shutterstock.com/image-photo/shree-dwarkadhish-temple-dwarka-believed-600nw-2541285683.jpg"
+      'https://imgs.search.brave.com/qfnsWEUz4RMARKsYL3hkKMyLEarAW16dUcUiJX6bb5w/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bXlzdHJlYWwuY29t/L19uZXh0L2ltYWdl/Lz91cmw9L3RlbXBs/ZS9kd2Fya2FkaGlz/aC10ZW1wbGUvY29u/Y2x1c2lvbi5qcGcm/dz0zODQwJnE9NzU',
+      'https://imgs.search.brave.com/9hMILmFxOEwurGR7RuUEtPs0IzbaxykxxK55SXPf7Sc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZGFpd2lraG90ZWxz/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyNC8wNy9Ed2Fy/a2FkaXNoLXRlbXBs/ZS0xLmpwZw',
+      'https://imgs.search.brave.com/ryEdk0IetbEvkshaOTkS8cbvTvbw4TnTj_vbWD_8Rew/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHJp/bGxpbmd0cmF2ZWwu/aW4vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjEvMDMvRHdhcmth/ZGhpc2gtdGVtcGxl/LWd1amFyYXQuanBn',
+      "https://imgs.search.brave.com/238oMfHTrWzj_7amxog4QvElBGsLYvYxHCJUG5AEiAI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzEyLzQ4LzE3LzY1/LzM2MF9GXzEyNDgx/NzY1OThfWjV2VDFU/Z3FYcEFDRlYzMnJy/Nm1Vdm9NYVRTVFYx/NWQuanBn"
     ]
   },
   {
@@ -69,7 +69,7 @@ export const data = [
     details: `The Golden Temple (Harmandir Sahib) is the holiest shrine in Sikhism. It features a gold-plated sanctum surrounded by the Amrit Sarovar (pool of nectar). The architecture blends Hindu and Islamic motifs, and the four entrances symbolize openness to all. `,
     timings: ` Key times are early morning (around 4–6 am for the first prayers) and evening when the temple is beautifully lit. During festivals like Baisakhi, Gurpurab, and Diwali, the complex is illuminated and crowds surge. Peak hours tend to be 5 am–8 am and 5 pm–8 pm. The langar (community kitchen) runs 24/7, offering meals to thousands daily.`,
     extraPhotos: [
-      'hhttps://i.pinimg.com/736x/8c/f5/4d/8cf54d4a9fcff5259d20b66c2dbef84f.jpg',
+      'https://imgs.search.brave.com/Rl5i6PUBhu3n6f-8klKO67c2dxPj68Geas6fVE7K6Lc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9nb2xkZW4tdGVt/cGxlLWdvbGRlbi1o/b3Vycy1yZWZsZWN0/ZWQtbGFuZC1za3lf/MTA0ODk0NC0yMzEx/MDE5NC5qcGc_c2Vt/dD1haXNfaHlicmlk/Jnc9NzQwJnE9ODA',
       'https://i.pinimg.com/736x/4d/59/e0/4d59e010b99a1850b4a8cce443bbbe96.jpg',
       'https://www.holidify.com/images/cmsuploads/compressed/3642798609_391c788221_b_20190108183842.jpg',
       'https://www.holidify.com/images/cmsuploads/compressed/Golden_Temple_Amritsar_20190108190257.jpg'
@@ -87,7 +87,7 @@ export const data = [
       'https://i.pinimg.com/736x/ab/78/bf/ab78bfbaae40c078380bedb830b96394.jpg',
       'https://i.pinimg.com/736x/51/a1/50/51a150652af8ab28a1ad2b87cb5b62c1.jpg',
       'https://imgcld.yatra.com/ytimages/image/upload/t_yt_blog_c_fill_q_auto:good_f_auto_w_800_h_500/v1536647411/Tirupati_Blog9876_1536646687.jpg',
-      'hhttps://i.pinimg.com/736x/07/99/50/07995013ff59e5e25616600a2521c2a3.jpg'
+      'https://imgs.search.brave.com/bPv1y10wPpMLXXfqakaIoNyw-FvCZsrUbEnT-QtvU2Y/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQw/ODI0MDg2L3Bob3Rv/L2hpZ2gtYW5nbGUt/dmlldy1vZi1hLXRl/bXBsZS10aXJ1bWFs/YS12ZW5rYXRlc3dh/cmEtdGVtcGxlLXRp/cnVtYWxhLXRpcnVw/YXRpLWNoaXR0b29y/LWRpc3RyaWN0Lmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1J/TGctWTdTWXR0VDll/VjlnZGROdHhtMXFp/YzVld052NmhNVGc5/bzNBZEZrPQ'
     ]
   },
   {
@@ -130,10 +130,10 @@ export const data = [
     details: `The Jagannath Temple in Puri is one of the Char Dhams of India. It is dedicated to Lord Jagannath (a form of Vishnu) and is famous for the grand Rath Yatra chariot festival, where deities are pulled on giant chariots by devotees. During Rath Yatra and the preceding days, the temple sees an enormous rush. `,
     timings: ` Peak hours are early morning darshan and late evening. On festival days, thousands queue overnight and special crowd management (token system, barricades) is used.`,
     extraPhotos: [
-      'https://upload.wikimedia.org/wikipedia/commons/2/24/Jagannath_temple_puri.jpg',
-      'https://upload.wikimedia.org/wikipedia/commons/4/47/Rath_Yatra_Puri.jpg',
-      'https://upload.wikimedia.org/wikipedia/commons/1/1d/Jagannath_temple_night.jpg',
-      'https://upload.wikimedia.org/wikipedia/commons/5/5c/Puri_temple_front.jpg'
+      'https://imgs.search.brave.com/qYQOQJwe6EU0uUVDDXwMYQWUYADqLevXY7Hcn8oZq3M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9lbWFt/aS10ZW1wbGUtc2Vj/b25kLWphZ2FubmF0/aC1vZGlzaGEtYmFs/YXNvcmUtZGlzdHJp/Y3QtYWxzby1rbm93/bi1wdXJpLTE3MDA2/MDUxNC5qcGc',
+      'https://imgs.search.brave.com/9wdRZww0s5BqjxRpQwXZFk4xQfUAADVope5q5niVD6A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9mYW1v/dXMtbG9yZC1qYWdh/bm5hdGgtdGVtcGxl/LXB1cmktbmlnaHQt/Y29sb3JmdWwtc2t5/LWJhY2tncm91bmQt/YXR0cmFjdGl2ZS1m/YW1vdXMtbG9yZC1q/YWdhbm5hdGgtdGVt/cGxlLXB1cmktbmln/aHQtMTc0NTU4OTM4/LmpwZw',
+      'https://imgs.search.brave.com/i_OKMDyYX7PxXS9GAovOEwLSZpdJkl5g_vbD14l8KZs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oYmxp/bWcubW10Y2RuLmNv/bS9jb250ZW50L2h1/YmJsZS9pbWcvcHVy/aS9tbXQvYWN0aXZp/dGllcy9tX1NocmVl/JTIwSmFnYW5uYXRo/JTIwVGVtcGxlLTJf/bF80ODBfNTQ5Lmpw/Zw',
+      'https://imgs.search.brave.com/T-YxXVLiYEHCFYAj6k0ukopwTlV0f7hhnJQXl7dL6h8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vd2Vla2Vu/ZHlhYXJpLmluL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDI1LzA1/L0phZ2FubmF0aC1U/ZW1wbGUtUHVyaS0l/RTIlODAlOTMtQ29t/cGxldGUtR3VpZGUt/LmpwZz9maXQ9NzIw/LDQ4MCZzc2w9MQ'
     ]
   },
   {
@@ -176,8 +176,8 @@ export const data = [
     extraPhotos: [
       'https://i.pinimg.com/736x/d7/65/27/d76527dc6b5816a005e3379eeea36fed.jpg',
       'https://i.pinimg.com/736x/27/0b/7e/270b7ea336f5ecd7432bd09c546d94d7.jpg',
-      'https://i.pinimg.com/736x/3e/b8/da/3eb8da214f49162d845896a0a2483c2f.jpg ',
-      '/_next/image/?url=%2Ftemple%2Fbadrinath-temple%2F2-The-Eternal-Flame-of-Badrinath-3.jpg&w=3840&q=75'
+      'https://i.pinimg.com/736x/3e/b8/da/3eb8da214f49162d845896a0a2483c2f.jpg',
+      'https://imgs.search.brave.com/WPCrGpFyDLuCVN7cx2rDFn0tyIOX-SMUcOmu26xWzlI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9iYWRy/aW5hdGgtdGVtcGxl/LWFuY2llbnQtbG9y/ZC12aXNobnUtdXR0/YXJha2hhbmQtaW5k/aWEtZGVjb3JhdGVk/LWNoYXItZGhhbS0x/ODc4MjM4MzguanBn'
     ]
   }
 ];

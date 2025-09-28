@@ -14,6 +14,9 @@ import { NavigationContainer } from '@react-navigation/native'
 import { AuthProvider, useAuth } from '../context/AuthContext';
 import RootNavigator from './components/RootNavigator'
 
+//for drawer
+
+
 
 
 export default function App() {
