@@ -25,7 +25,7 @@ export default function Navbar(name: any) {
         <Image
             source={
                 {
-                    uri :'https://instagram.fbek1-1.fna.fbcdn.net/v/t51.2885-19/459189304_1615484525670530_3291100886867796257_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby42MTQuYzIifQ&_nc_ht=instagram.fbek1-1.fna.fbcdn.net&_nc_cat=1&_nc_oc=Q6cZ2QF9xyk0588Sp9m41qqDgs9uDRoCcNmACkjsV0hSflsKcSOqfrrVwUEl6jmzshOZNEgOBsm-vFimCKh4DXxl4XdJ&_nc_ohc=_9pjXUkBI_8Q7kNvwHBpQ6W&_nc_gid=2HWFmPLIny4jpoKMkIWtsw&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Afb0jnr649UQAH3kwjm7RcPtA1hm5uhhlAhp4G9YjT6jzQ&oe=68D817F0&_nc_sid=7a9f4b'
+                    uri :'https://img.freepik.com/free-photo/user-profile-icon-front-side-with-white-background_187299-40010.jpg?t=st=1759001153~exp=1759004753~hmac=1cfb03738af4484b3c60473e69f2b28685962c31d4001aeda6531c6fe129272d&w=1480'
                 }
             }
             style={styles.ImageLogo}
@@ -57,7 +57,7 @@ export default function Navbar(name: any) {
 const styles = StyleSheet.create({
     nav:{
         backgroundColor : '#EF7722',
-        paddingVertical : 10,
+        paddingVertical : 11,
     },
     container:{
         marginHorizontal : 15,
@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
         
     },
     ImageLogo:{
-        width : 45,
-        height : 45,
+        width : 40,
+        height : 40,
         borderRadius : 50
     },
     userDetails:{
