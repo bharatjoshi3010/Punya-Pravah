@@ -81,23 +81,6 @@ export default function Details({ route }: DetailProps) {
                     </View>
                     <View >
                         <TouchableOpacity style={[styles.btn]} onPress={() => {
-                            // Alert.alert(
-                            //     'Token Generated',
-                            //     'Check your token details on main dashboard',
-                            //     [
-                            //         {
-                            //             text: 'Cancel Token',
-                            //             onPress: () => console.log('Cancel'),
-                            //             style: 'cancel', // iOS shows as bold
-                            //         },
-                            //         {
-                            //             text: 'Ok',
-                            //             onPress: () => console.log('ok'),
-                            //             style: 'destructive', // iOS style for destructive actions
-                            //         },
-                            //     ],
-                            //     { cancelable: false } // User cannot dismiss by tapping outside
-                            // );
                             navigation.push('TokenBook', {detailObj: detailObj})
                         }}>
                             <Text style={styles.btnTxt}>Book a token</Text>

@@ -53,12 +53,14 @@ export default function Navbar({ headerText }: { headerText: string }) {
 
     const handleOptionPress = (value: OptionMenuProps) => {
         if (value.toString() === 'token'){
+            navigation.popToTop()
             navigation.push('Token')
         }
         else if (value.toString() === 'logout') {
             logOut();
         }
         else if (value.toString() === 'dreamplace') {
+            navigation.popToTop()
             navigation.push('Dreamplace')
         }
         closeMenu();
