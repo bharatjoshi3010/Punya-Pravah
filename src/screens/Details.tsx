@@ -9,6 +9,8 @@ import Navbar from '../components/Navbar'
 import { useAuth } from '../../context/AuthContext'
 import { useNavigation } from '@react-navigation/native'
 import { timing } from 'react-native-reanimated'
+import { databases } from '../../lib/appwrite'
+import { APPWRITE_DATABASE_ID, APPWRITE_TABLE_DP } from '@env'
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window')
 
@@ -16,13 +18,32 @@ type DetailProps = NativeStackScreenProps<RootStackParamList, 'Deatils'>
 
 export default function Details({ route }: DetailProps) {
 
-    const {session, username} = useAuth();
+    const {session, user} = useAuth();
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
 
     const { detailObj } = route.params
     const { id, name, location, famousFor, imageURL, extraPhotos, details, timings} = detailObj
     const [images] = useState(extraPhotos);
     console.log(extraPhotos)
+
+    const addToDP = async (userIdO, templeIdO) => {
+        console.log(userIdO, templeIdO)
+        try {
+            const response = await databases.createDocument(
+                APPWRITE_DATABASE_ID, // Database ID
+                APPWRITE_TABLE_DP,       // Table name
+                'unique()',         // Row ID (auto-generated)
+                {
+                    userId: userIdO,
+                    templeId: templeIdO.toString(),
+                }
+            );
+
+            console.log("Added to Guard:", response);
+        } catch (error) {
+            console.error("Error adding to Guard:", error);
+        }
+    };
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
@@ -74,7 +95,9 @@ export default function Details({ route }: DetailProps) {
                 <View style={styles.buttonField}>
                     <View >
                         <TouchableOpacity style={[styles.btn]} onPress={() => {
-                            ToastAndroid.show(`${name} added to your dream place`, ToastAndroid.SHORT);
+
+                            ToastAndroid.show(`${name} added to your dream place`, ToastAndroid.SHORT)
+                            addToDP(user.email, id.toString());
                         }}>
                             <Text style={styles.btnTxt}>Add to Dream Place</Text>
                         </TouchableOpacity>

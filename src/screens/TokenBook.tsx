@@ -7,6 +7,9 @@ import Navbar from '../components/Navbar'
 import DatePicker from 'react-native-date-picker';
 import { useAuth } from '../../context/AuthContext'
 import { useNavigation } from '@react-navigation/native'
+import { databases } from '../../lib/appwrite'
+import { APPWRITE_DATABASE_ID, APPWRITE_TABLE_TN } from '@env'
+import { setSelectedLog } from 'react-native/types_generated/Libraries/LogBox/Data/LogBoxData'
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window')
 type DetailProps = NativeStackScreenProps<RootStackParamList, 'TokenBook'>
@@ -22,18 +25,41 @@ export default function TokenBook({ route }: DetailProps) {
     const [nod, setNod] = useState('');
 
     const { user, session } = useAuth()
+    console.log(user);
 
     const formatFirstWord = (str: any) => {
         return str
             .trim()
             .split(/\s+/) // split by spaces
-            .map((word:any) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+            .map((word: any) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
             .join(' ');
     };
 
     const { detailObj } = route.params
 
     const { id, name } = detailObj
+
+    const addToToken = async (userIdO, templeIdO, dateBook, people) => {
+        console.log(userIdO, templeIdO, people, date)
+        try {
+            const response = await databases.createDocument(
+                APPWRITE_DATABASE_ID, // Database ID
+                APPWRITE_TABLE_TN,       // Table name
+                'unique()',         // Row ID (auto-generated)
+                {
+                    date: dateBook,
+                    userId: userIdO,
+                    templeId: templeIdO.toString(),
+                    noOfpepole: people
+                }
+            );
+
+            console.log("Added to Guard:", response);
+        } catch (error) {
+            console.error("Error adding to Guard:", error);
+        }
+    };
+
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
             <Navbar headerText={'Punya Pravah'} />
@@ -85,7 +111,8 @@ export default function TokenBook({ route }: DetailProps) {
                             {
                                 text: 'Ok',
                                 onPress: () => {
-                                    
+                                    console.log(date.toDateString())
+                                    addToToken(user.email, id, date.toDateString(), nod);
                                     setNod('');
                                     setDate(new Date());
 
@@ -94,7 +121,7 @@ export default function TokenBook({ route }: DetailProps) {
                                 style: 'destructive', // iOS style for destructive actions
                             },
                         ],
-                        { cancelable: false } // User cannot dismiss by tapping outside
+                        // { cancelable: false } // User cannot dismiss by tapping outside
                     );
                 }}>
                     <View style={styles.btn}>
@@ -122,10 +149,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between'
     },
-    people:{
-        marginTop : 20,
+    people: {
+        marginTop: 20,
         // justifyContent : 'center',
-        alignItems : 'center'
+        alignItems: 'center'
     },
     headingTxt: {
         color: 'black',
@@ -138,10 +165,10 @@ const styles = StyleSheet.create({
         fontWeight: '700'
     },
     inputBox: {
-        borderBottomWidth : 1,
-        paddingVertical : 1,
-        justifyContent :'center',
-        alignItems : 'center'
+        borderBottomWidth: 1,
+        paddingVertical: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     dateInput: {
         flexDirection: 'row',

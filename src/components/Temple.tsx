@@ -6,15 +6,39 @@ import { data } from '../assets/templeList'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { RootStackParamList } from './RootNavigator'
 import { useNavigation } from '@react-navigation/native'
+import { APPWRITE_DATABASE_ID, APPWRITE_TABLE_DP } from '@env'
+import { databases } from '../../lib/appwrite'
+import { useAuth } from '../../context/AuthContext'
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window')
 export default function Temple() {
 
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
 
+  const {user, session} = useAuth()
+
   const handlePlan = (item : object) => {
     navigation.push('Deatils', { detailObj: item });
   }
+
+  const addToDP = async (userIdO, templeIdO) => {
+        console.log(userIdO, templeIdO)
+        try {
+            const response = await databases.createDocument(
+                APPWRITE_DATABASE_ID, // Database ID
+                APPWRITE_TABLE_DP,       // Table name
+                'unique()',         // Row ID (auto-generated)
+                {
+                    userId: userIdO,
+                    templeId: templeIdO.toString(),
+                }
+            );
+
+            console.log("Added to Guard:", response);
+        } catch (error) {
+            console.error("Error adding to Guard:", error);
+        }
+    };
 
   return (
     <View style={styles.pagebg}>
@@ -51,6 +75,7 @@ export default function Temple() {
             <View style={styles.btns}>
               
               <TouchableOpacity onPress={() => {
+                addToDP(user.email, (item.id).toString())
                 ToastAndroid.show(`${item.name} added to your dream place`, ToastAndroid.SHORT);
               }}>
                 <View style={[styles.dpbtn, styles.btn]}>
