@@ -2,10 +2,13 @@ import { Alert, Dimensions, FlatList, Image, ScrollView, StyleSheet, Text, Toast
 import React, { useRef, useState } from 'react'
 
 //Navigational imports
-import { NativeStackScreenProps } from '@react-navigation/native-stack'
+import { NativeStackNavigationProp, NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../components/RootNavigator'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Navbar from '../components/Navbar'
+import { useAuth } from '../../context/AuthContext'
+import { useNavigation } from '@react-navigation/native'
+import { timing } from 'react-native-reanimated'
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window')
 
@@ -13,8 +16,11 @@ type DetailProps = NativeStackScreenProps<RootStackParamList, 'Deatils'>
 
 export default function Details({ route }: DetailProps) {
 
+    const {session, username} = useAuth();
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
+
     const { detailObj } = route.params
-    const { id, name, location, famousFor, imageURL, extraPhotos, details } = detailObj
+    const { id, name, location, famousFor, imageURL, extraPhotos, details, timings} = detailObj
     const [images] = useState(extraPhotos);
     console.log(extraPhotos)
 
@@ -55,6 +61,13 @@ export default function Details({ route }: DetailProps) {
                     <View style={styles.details}>
                         <Text style={styles.detailsTxt}>{details}</Text>
                     </View>
+                    <View style={styles.timingHead}>
+                        <Text style={styles.timingHeadTxt}>Timings : </Text>
+                    </View>
+                    
+                    <View style={styles.timing}>
+                        <Text style={styles.timingTxt}>{timings}</Text>
+                    </View>
                 </View>
             </ScrollView>
             <View>
@@ -68,23 +81,24 @@ export default function Details({ route }: DetailProps) {
                     </View>
                     <View >
                         <TouchableOpacity style={[styles.btn]} onPress={() => {
-                            Alert.alert(
-                                'Token Generated',
-                                'Check your token details on main dashboard',
-                                [
-                                    {
-                                        text: 'Cancel Token',
-                                        onPress: () => console.log('Cancel'),
-                                        style: 'cancel', // iOS shows as bold
-                                    },
-                                    {
-                                        text: 'Ok',
-                                        onPress: () => console.log('ok'),
-                                        style: 'destructive', // iOS style for destructive actions
-                                    },
-                                ],
-                                { cancelable: false } // User cannot dismiss by tapping outside
-                            );
+                            // Alert.alert(
+                            //     'Token Generated',
+                            //     'Check your token details on main dashboard',
+                            //     [
+                            //         {
+                            //             text: 'Cancel Token',
+                            //             onPress: () => console.log('Cancel'),
+                            //             style: 'cancel', // iOS shows as bold
+                            //         },
+                            //         {
+                            //             text: 'Ok',
+                            //             onPress: () => console.log('ok'),
+                            //             style: 'destructive', // iOS style for destructive actions
+                            //         },
+                            //     ],
+                            //     { cancelable: false } // User cannot dismiss by tapping outside
+                            // );
+                            navigation.push('TokenBook', {detailObj: detailObj})
                         }}>
                             <Text style={styles.btnTxt}>Book a token</Text>
                         </TouchableOpacity>
@@ -143,7 +157,21 @@ const styles = StyleSheet.create({
     detailsTxt: {
         color: 'black',
         fontSize: 16
-
+    },
+    timingHead:{
+        marginTop: 20
+    },
+    timingHeadTxt:{
+        color: 'black',
+        fontSize: 20,
+        fontWeight : 'bold'
+    },
+    timing:{
+        marginTop : 5
+    },
+    timingTxt:{
+         color: 'black',
+        fontSize: 16
     },
     btn: {
         backgroundColor: '#EF7722',

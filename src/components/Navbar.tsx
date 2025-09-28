@@ -20,11 +20,10 @@ const MENU_OPTIONS: MenuOptionType[] = [
 interface OptionMenuProps {
     onSelectOption: (value: string) => void;
 }
-
-const OptionMenu = () => {
-
-};
 export default function Navbar({ headerText }: { headerText: string }) {
+
+    const {session, username} = useAuth();
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
 
     //from here
 
@@ -53,8 +52,14 @@ export default function Navbar({ headerText }: { headerText: string }) {
     const closeMenu = () => setIsVisible(false);
 
     const handleOptionPress = (value: OptionMenuProps) => {
-        if (value.toString() === 'logout') {
+        if (value.toString() === 'token'){
+            navigation.push('Token')
+        }
+        else if (value.toString() === 'logout') {
             logOut();
+        }
+        else if (value.toString() === 'dreamplace') {
+            navigation.push('Dreamplace')
         }
         closeMenu();
     };

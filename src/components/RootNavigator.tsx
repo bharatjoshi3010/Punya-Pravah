@@ -12,6 +12,9 @@ import Home from '../screens/Home';
 import LogIn from '../screens/LogIn';
 import SingUp from '../screens/SingUp';
 import Details from '../screens/Details';
+import Dreamplace from '../screens/Dreamplace';
+import Token from '../screens/Token';
+import TokenBook from '../screens/TokenBook';
 
 
 export type RootStackParamList ={
@@ -19,6 +22,9 @@ export type RootStackParamList ={
   SignUp : undefined,
   Home : {sessionId: string, userName : string},
   Deatils : {detailObj: object},
+  Dreamplace : undefined,
+  Token : undefined,
+  TokenBook : {detailObj: object}
   
 };
 
@@ -46,6 +52,18 @@ export default function RootNavigator() {
         <Stack.Screen
           name = 'Deatils'
           component= {Details}
+        />
+        <Stack.Screen
+          name = 'Dreamplace'
+          component= {Dreamplace}
+        />
+        <Stack.Screen
+          name = 'Token'
+          component= {Token}
+        />
+        <Stack.Screen
+          name = 'TokenBook'
+          component= {TokenBook}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -46,11 +46,6 @@ export default function Home({ route }: HomeProps) {
       <View>
         <Temple />
       </View>
-      <View >
-        <TouchableOpacity onPress={handleSubmit} style={styles.button}>
-          <Text style={{ color: 'black', fontSize: 24 }}> Click on this red are  to logout</Text>
-        </TouchableOpacity>
-      </View>
     </SafeAreaView>
   )
 }
