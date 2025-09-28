@@ -45,10 +45,12 @@ const [tokenData, setTokenData] = useState([]);
     
 
      return (
+        <SafeAreaView>
+            <Navbar headerText='Booked Tokens'/>
     <View style={styles.container}>
       {tokenData.map((token) => {
         // Find matching temple details
-        const temple = data.find(item => item.id === token.templeId);
+        const temple = data.find(item => item.id.toString() === token.templeId.toString());
 
         // If temple not found, skip rendering
         if (!temple) return (<Text>heloosjbjn</Text>);
@@ -67,7 +69,45 @@ const [tokenData, setTokenData] = useState([]);
         );
       })}
     </View>
+    </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+  },
+  card: {
+    backgroundColor: '#fff',
+    padding: 14,
+    marginBottom: 12,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    elevation: 3,
+  },
+  templeName: {
+    color:'black',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  templeLocation: {
+    fontSize: 14,
+    color: '#444',
+  },
+  templeFamous: {
+    fontSize: 12,
+    color: '#666',
+    marginBottom: 8,
+  },
+  bookingDate: {
+    fontSize: 14,
+    color: '#2563EB',
+  },
+  peopleCount: {
+    fontSize: 14,
+    color: '#333',
+  },
+});
