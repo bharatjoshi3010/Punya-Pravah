@@ -14,6 +14,7 @@ type MenuOptionType = {
 const MENU_OPTIONS: MenuOptionType[] = [
     { label: 'Token Status', value: 'token' },
     { label: 'Dreamplace', value: 'dreamplace' },
+    { label: 'AboutUs', value: 'aboutus' },
     { label: 'Logout', value: 'logout' },
 ];
 
@@ -62,6 +63,10 @@ export default function Navbar({ headerText }: { headerText: string }) {
         else if (value.toString() === 'dreamplace') {
             navigation.popToTop()
             navigation.push('Dreamplace')
+        }
+        else if (value.toString() === 'aboutus') {
+            navigation.popToTop()
+            navigation.push('AboutUs')
         }
         closeMenu();
     };

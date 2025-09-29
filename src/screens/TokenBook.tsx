@@ -1,4 +1,4 @@
-import { Alert, Button, Dimensions, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Alert, Button, Dimensions, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import { NativeStackNavigationProp, NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../components/RootNavigator'
@@ -105,21 +105,25 @@ export default function TokenBook({ route }: DetailProps) {
 
                 <TouchableOpacity onPress={() => {
                     nod && Alert.alert(
-                        'Token Generated',
+                        'Confirm Details',
                         `Date : ${date.toDateString()} \nTemple : ${name} (${id}) \nGroup Lead : ${formatFirstWord(user.name)} \nNumber of people in group : ${nod}`,
-                        [
-                            {
-                                text: 'Ok',
-                                onPress: () => {
-                                    console.log(date.toDateString())
-                                    addToToken(user.email, id, date.toDateString(), nod);
-                                    setNod('');
-                                    setDate(new Date());
-
-                                    navigation.popToTop()
-                                },
-                                style: 'destructive', // iOS style for destructive actions
+                        [{
+                            text: "Cancel",
+                            onPress: () => console.log("Cancel Pressed"),
+                            style: "cancel",
+                        },
+                        {
+                            text: 'Generate Token',
+                            onPress: () => {
+                                // console.log(date.toDateString())
+                                addToToken(user.email, id, date.toDateString(), nod);
+                                setNod('');
+                                setDate(new Date());
+                                ToastAndroid.show('Token Generated, You can find it on Dashboard -> Menu -> Token Status', ToastAndroid.SHORT);
+                                navigation.popToTop()
                             },
+                            style: 'destructive', // iOS style for destructive actions
+                        },
                         ],
                         // { cancelable: false } // User cannot dismiss by tapping outside
                     );

@@ -66,6 +66,7 @@ const [tokenData, setTokenData] = useState([]);
             {/* From Token Data */}
             <Text style={styles.bookingDate}>Booking Date: {token.date}</Text>
             <Text style={styles.peopleCount}>People: {token.noOfpepole}</Text>
+            <Text style={styles.msg}>Your passes and predicted visit time will be provided to you one day prior to your visit.</Text>
           </View>
         );
       })}
@@ -112,4 +113,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#333',
   },
+  msg:{
+    fontSize: 14,
+    color: 'black',
+    fontWeight :'600'
+  }
 });

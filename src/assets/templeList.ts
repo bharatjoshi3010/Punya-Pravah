@@ -4,12 +4,12 @@ export const data = [
     name: 'Somnath Temple',
     location: 'Saurashtra region in Gujarat, India',
     famousFor: 'The first and most sacred of the twelve Jyotirlingas dedicated to Lord Shiva, symbolizing spiritual devotion and resilience of faith',
-    imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsOIivRFI4MAjxHucdz9bM1QVnF_EQPaOdLN7eK3p_5pDfQb90mJKgALcQ-GFxlNAVhbA&usqp=CAU',
+    imageURL: 'https://i.pinimg.com/736x/e2/0a/32/e20a328f210fa2ac499c2831f51739ea.jpg',
     details: `Somnath is revered as the foremost Jyotirlinga of Lord Shiva. Over centuries, it has been destroyed and rebuilt multiple times, making it a potent symbol of faith and resilience. The current temple is built in Māru-Gurjara (Solanki) architectural style, facing the Arabian Sea, allowing beautiful sunrise and sunset views. The site also has a light & sound show in the evening that narrates its history.`,
     timings: `Pilgrims often visit during Somvati Amavasya, Mahashivaratri, and during the monsoon break. The busiest hours are early morning (around 5 am to 8 am) and late afternoon (4 pm to 7 pm). On festival days, the crowd surges significantly, so arriving before dawn is recommended.`,
     extraPhotos: [
-      'https://i.pinimg.com/736x/e2/0a/32/e20a328f210fa2ac499c2831f51739ea.jpg',
       'https://i.pinimg.com/736x/d9/42/35/d9423545cab3cdefdaff0916c166c1dc.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsOIivRFI4MAjxHucdz9bM1QVnF_EQPaOdLN7eK3p_5pDfQb90mJKgALcQ-GFxlNAVhbA&usqp=CAU',
       'https://imgs.search.brave.com/U7yb96NDbT7A0RAvNEGGUzmk8ijOdqAKx1MEoh_PfW8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kMzY4/dWZ1N3hnY3M4Ni5j/bG91ZGZyb250Lm5l/dC8yMTM3MDMzOTQ3/My5qcGc',
       'https://www.alightindia.com/cdn/uploads/postimages/ORIGINAL/Somnath%20Jyotirlinga%20%20Internet--870ebe.jpg'
     ]

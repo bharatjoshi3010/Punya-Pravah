@@ -15,6 +15,7 @@ import Details from '../screens/Details';
 import Dreamplace from '../screens/Dreamplace';
 import Token from '../screens/Token';
 import TokenBook from '../screens/TokenBook';
+import AboutUs from '../screens/AboutUs';
 
 
 export type RootStackParamList ={
@@ -24,8 +25,8 @@ export type RootStackParamList ={
   Deatils : {detailObj: object},
   Dreamplace : undefined,
   Token : undefined,
-  TokenBook : {detailObj: object}
-  
+  TokenBook : {detailObj: object},
+  AboutUs: undefined,
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
@@ -65,6 +66,11 @@ export default function RootNavigator() {
           name = 'TokenBook'
           component= {TokenBook}
         />
+        <Stack.Screen
+          name='AboutUs'
+          component={AboutUs}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   )
