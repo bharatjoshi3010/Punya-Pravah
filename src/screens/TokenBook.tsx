@@ -172,7 +172,8 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         paddingVertical: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        color : 'black'
     },
     dateInput: {
         flexDirection: 'row',
