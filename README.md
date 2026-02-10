@@ -1,97 +1,108 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Punya Pravah – Temple Token Booking App (Frontend)
 
-# Getting Started
+## 📱 App Overview (Short Concept)
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+**Punya Pravah** is a mobile application that helps devotees **discover temples, save them as dream places, and book darshan tokens digitally**.  
+The app focuses on a **smooth, organized, and modern pilgrimage experience**, replacing traditional queues with a simple token-based system.
 
-## Step 1: Start Metro
+This repository contains the **frontend-only implementation**, fully designed and developed by **Bharat Joshi**.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+---
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+## 🔐 Authentication
+- User login & signup implemented using **Appwrite Authentication**
+- Secure session-based access
+- Logged-in users can manage temples, dream places, and tokens
 
-```sh
-# Using npm
-npm start
+---
 
-# OR using Yarn
-yarn start
-```
+## 🛕 Core Features
 
-## Step 2: Build and run your app
+### 1. Temple Listing
+- Displays a list of available temples
+- Clean and intuitive UI for browsing
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### 2. Dream Place List
+- Users can add temples to their **Dream Places**
+- Quick access to favorite temples
 
-### Android
+### 3. Token Booking
+- Book darshan tokens for selected temples
+- View booked tokens anytime inside the app
 
-```sh
-# Using npm
-npm run android
+### 4. My Tokens
+- Displays all booked tokens
+- Organized and user-friendly layout
 
-# OR using Yarn
-yarn android
-```
+---
 
-### iOS
+## ⚛️ Frontend Implementation
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+### Hooks Used
+- `useState` – for state management
+- `useEffect` – for lifecycle & data handling
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+### Navigation
+- Stack Navigation
+- Drawer Navigation
 
-```sh
-bundle install
-```
+### Libraries & Tools
+- React Native
+- Appwrite (Authentication)
+- React Navigation
+- Multiple supporting UI & utility libraries
 
-Then, and every time you update your native dependencies, run:
+---
 
-```sh
-bundle exec pod install
-```
+## 🚧 Project Scope
+- Frontend-only application
+- Backend, AI/ML, and real-time systems are not included
+- Uses mock/static data where required
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+---
 
-```sh
-# Using npm
-npm run ios
+## 🚀 Future Enhancements
+- Backend integration for real token validation
+- AI-based time-slot allocation
+- NFC & QR-based entry validation
+- Admin & police dashboards
 
-# OR using Yarn
-yarn ios
-```
+---
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 📄 License
+Developed for **learning, academic, and hackathon purposes**.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+---
+## ⬇️ Download App
+[Download it](https://github.com/bharatjoshi3010/Punya-Pravah/raw/main/app-release.apk) 
 
-## Step 3: Modify your app
+---
 
-Now that you have successfully run the app, let's make changes!
+## 📸 Screenshots
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+### 🔐 Login
+![Login Screen](screenshots/login.png)
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+### 🔐 Signup
+![Signup Screen](screenshots/signup.png)
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+### 🛕 Temple List
+![Temple List](screenshots/templelist.png)
 
-## Congratulations! :tada:
+### 🛕 Temple Details
+![Temple List](screenshots/templedetails.png)
 
-You've successfully run and modified your React Native App. :partying_face:
+### ⭐ Option drawer
+![Option Drawer](screenshots/optionDrawer.png)
 
-### Now what?
+### ⭐ Dream Places
+![Dream Places](screenshots/dreamplaces.png)
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+### 🎟️ Token Booking
+![Token Booking](screenshots/tokenbooking.png)
 
-# Troubleshooting
+### 🎟️ Token Confirm
+![Token Confirm](screenshots/tokenconfirmg.png)
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+### 🎟️ Token list
+![Token list](screenshots/tokenlist.png)
